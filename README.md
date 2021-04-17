@@ -9,6 +9,10 @@ More to come soon on what this is going to do.
   * Clone repo
   * `npm install`
   * Create `.env.local` file
+    ```
+    CLIENT_ID=REPLACE_WITH_CLIENT_ID
+    API_KEY=REPLACE_WITH_API_KEY
+    ```
   * Create account with Yelp for their API
   * Update `.env.local` to use your API Key
   * `npm run dev`
