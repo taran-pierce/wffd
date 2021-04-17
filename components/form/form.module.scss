@@ -1,0 +1,24 @@
+@import '../../styles/variables';
+
+.inputText {
+  padding: $layout-spacing-xs;
+  border: 1px solid $input-border-color;
+  border-radius: $input-border-radius;
+  margin: 0;
+}
+
+.button {
+  padding: $layout-spacing-xs;
+  margin: 0 $layout-spacing-xs 0 $layout-spacing-xs;
+  border: $input-border-style;
+  background: $button-primary-background;
+  color: $button-primary-text-color;
+}
+
+.inverse {
+  padding: $layout-spacing-xs;
+  margin: 0 $layout-spacing-xs 0 $layout-spacing-xs;
+  background: $button-inverse-background;
+  color: $button-inverse-text-color;
+  border: $input-border-style;
+}

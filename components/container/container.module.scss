@@ -1,0 +1,11 @@
+@import '../../styles/variables';
+
+.container {
+  padding: $layout-spacing-sm;
+
+  // look for headings and remove top margin
+  > h1,
+  > h2 {
+    margin-top: 0;
+  }
+}

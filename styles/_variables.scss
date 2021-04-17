@@ -1,0 +1,39 @@
+// primitives
+$color-brand-primary: #006400;
+$black: #333;
+$white: #fff;
+
+// ui
+$brand-primary-background: $color-brand-primary;
+$brand-inverse-background: $white;
+
+// spacing
+$layout-spacing-xs: .5rem;
+$layout-spacing-sm: 1rem;
+
+// borders
+$border-radius-xs: 2px;
+$border-radius-sm: 4px;
+$border-radius-md: 6px;
+$border-type: 'solid';
+$border-width: 1px;
+$border-color: $black;
+
+// typography
+$body-copy-color: $black;
+$font-weight-heavy: 900;
+
+// buttons
+$button-primary-background: $brand-primary-background;
+$button-primary-border-color: $brand-primary-background;
+$button-primary-text-color: $white;
+$button-primary-border-style: #{$border-type} #{$border-width} #{$brand-primary-background};
+$button-inverse-background: $brand-inverse-background;
+$button-inverse-border-color: $brand-inverse-background;
+$button-inverse-text-color: $color-brand-primary;
+$button-inverse-border-style: #{$border-type} #{$border-width} #{$brand-inverse-background};
+
+// form
+$input-border-radius: $border-radius-xs;
+$input-border-color: $border-color;
+$input-border-style: #{$border-width} #{$border-type} #{$color-brand-primary};

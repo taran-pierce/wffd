@@ -1,0 +1,26 @@
+@import '../../styles/variables';
+
+.header {
+  background: $brand-primary-background;
+}
+
+.ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: $font-weight-heavy;
+  color: $white;
+  text-shadow: -1px -1px $black;
+  letter-spacing: .2rem;
+}
+
+.links {
+  padding: $layout-spacing-sm;
+  display: block;
+}
