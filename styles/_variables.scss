@@ -10,6 +10,8 @@ $brand-inverse-background: $white;
 // spacing
 $layout-spacing-xs: .5rem;
 $layout-spacing-sm: 1rem;
+$layout-spacing-md: 1.5rem;
+$layout-spacing-lg: 2rem;
 
 // borders
 $border-radius-xs: 2px;
@@ -20,8 +22,22 @@ $border-width: 1px;
 $border-color: $black;
 
 // typography
+$font-family-fallback: unquote('-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif');
+$font-family-headings: quote('Quicksand'), $font-family-fallback;
+$font-family-body: quote('Kanit'), $font-family-fallback;
 $body-copy-color: $black;
-$font-weight-heavy: 900;
+$font-weight-lighter: 100;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 500;
+$font-weight-heavy: 700;
+// mobile sizes
+$font-size-heading-xs: 1.8rem;
+$font-size-heading-sm: 2rem;
+$font-size-heading-md: 2.5rem;
+$font-size-heading-lg: 3rem;
+$font-size-heading-xl: 3.7rem;
+$font-size-body-sm: 2rem;
 
 // buttons
 $button-primary-background: $brand-primary-background;

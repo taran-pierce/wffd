@@ -1,0 +1,43 @@
+@import '../../styles/variables';
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=Kanit:wght@100;400&display=swap');
+
+.text {
+  h1, h2, h3, h4 h5, h6 {
+    font-family: $font-family-headings;
+    font-weight: $font-weight-bold;
+  }
+
+  h1, h2 {
+    font-weight: $font-weight-heavy;
+  }
+
+  h1 {
+    font-size: $font-size-heading-xl;
+  }
+
+  h2 {
+    font-size: $font-size-heading-lg;
+  }
+
+  h3 {
+    font-size: $font-size-heading-md;
+  }
+
+  h4 {
+    font-size: $font-size-heading-sm;
+  }
+
+  h5 {
+    font-size: $font-size-heading-xs;
+  }
+
+  h6 {
+    font-size: $font-size-body-sm;
+  }
+
+  p, ol, ul, li, a {
+    font-size: $font-size-body-sm;
+    font-family: $font-family-body;
+    font-weight: $font-weight-lighter;
+  }
+}

@@ -1,45 +1,74 @@
 import React, { useState, useRef } from 'react';
+import { string } from 'prop-types';
 import Form from '../../components/form';
 
 export default function SearchForm(props) {
   const {
     buttonStyle,
+    customId,
   } = props;
-  const formInput = useRef(null);
-  const [searchValue, setSearchValue] = useState('');
 
+  // refs for form inputs
+  const formInputPlaceRef = useRef(null);
+  const formInputLocationRef = useRef(null);
+
+  // state values for form
+  const [placeValue, setPlaceValue] = useState('');
+  const [locationValue, setLocationValue] = useState('');
+
+  // change handler for form
   const changeHandler = (event) => {
-    const value = event.target.value;
-    
-    setSearchValue(value);
+    const { target } = event;
+    const { value } = target;
+
+    const isPlaceData = target.name.includes('place');
+    const isLocationData = target.name.includes('location');
+
+    if (isPlaceData) {
+      setPlaceValue(value);
+    }
+
+    if (isLocationData) {
+      setLocationValue(value);
+    }
   };
 
+
+  // TODO the form needs to have a toggle to leverage the different Yelp API endpoints
+  // https://www.yelp.com/developers/documentation/v3
+  // submit handler
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const [term, location] = searchValue.split(',');
-    let city = 'Burlington';
-    let state = 'MA';
+    const [city, state] = locationValue?.split(' ');
 
-    if (location) {
-      [city, state] = location.trim().split(' ');
-    }
-
-    const url = `/search/${term}?city=${city}&state=${state}`;
+    const url = `/search/${placeValue}?city=${city}&state=${state}`;
 
     window.location = url;
   };
-
   return (
     <>
       <Form 
         handleSubmit={handleSubmit}
-        formInputRef={formInput}
+        formInputPlaceRef={formInputPlaceRef}
+        formInputLocationRef={formInputLocationRef}
         changeHandler={changeHandler}
-        placeholder={'Nicks, Lexington MA'}
+        placePlaceholder={'Nicks'}
+        locationPlaceholder={'Lexington MA'}
         buttonText={'Submit'}
+        customId={customId}
         buttonStyle={buttonStyle ? buttonStyle : undefined}
       />
     </>
   );
 }
+
+SearchForm.defaultProps = {
+  buttonStyle: '',
+  customId: '',
+};
+
+SearchForm.propTypes = {
+  buttonStyle: string,
+  customId: string,
+};

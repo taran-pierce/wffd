@@ -1,15 +1,27 @@
 @import '../../styles/variables';
 
+.form {
+  fieldset {
+    padding: 0;
+    margin: 0 0 $layout-spacing-lg 0;
+  }
+
+  label, input {
+    font-family: $font-family-body;
+    font-weight: $font-weight-normal;
+  }
+}
+
 .inputText {
-  padding: $layout-spacing-xs;
+  padding: $layout-spacing-sm;
   border: 1px solid $input-border-color;
   border-radius: $input-border-radius;
   margin: 0;
 }
 
 .button {
-  padding: $layout-spacing-xs;
-  margin: 0 $layout-spacing-xs 0 $layout-spacing-xs;
+  padding: $layout-spacing-md $layout-spacing-lg;
+  margin: 0;
   border: $input-border-style;
   background: $button-primary-background;
   color: $button-primary-text-color;
@@ -21,4 +33,23 @@
   background: $button-inverse-background;
   color: $button-inverse-text-color;
   border: $input-border-style;
+}
+
+.formRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+}
+
+.buttonRow {
+  display: flex;
+  justify-content: flex-end;
+  border: none;
+}
+
+@media (min-width: 768px) {
+  .button {
+    margin: 0 $layout-spacing-xs 0 $layout-spacing-xs;
+  }
 }
