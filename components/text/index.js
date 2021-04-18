@@ -16,6 +16,14 @@ export default function Text(props) {
       return <h1>{content}</h1>;
     }
 
+    if (type === 'h3') {
+      return <h3>{content}</h3>;
+    }
+
+    if (type === 'h4') {
+      return <h4>{content}</h4>;
+    }
+
     return <p>{content}</p>;
   };
 

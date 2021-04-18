@@ -1,8 +1,8 @@
 import React from 'react';
 import Layout from '../../components/layout';
 import Container from '../../components/container';
-import ResultCard from '../../components/resultCard';
 // import Head from 'next/head';
+import ResultsContainer from '../../components/resultsContainer';
 
 // require yelp module
 const yelp = require('yelp-fusion');
@@ -19,9 +19,6 @@ const SearchTerm = (props) => {
     data,
   } = props;
 
-  // TODO dont stringify it and you dont have to parse it, duh
-  const searchData = JSON.parse(data);
-
   return (
     <>
       <Layout>
@@ -29,8 +26,8 @@ const SearchTerm = (props) => {
           <Container>
             <h1>Search Term: {props.term}</h1>
             <h2>Location: {props.location}</h2>
-            <ResultCard
-              data={searchData} 
+            <ResultsContainer 
+              data={data} 
             />
           </Container>
         </main>
@@ -54,19 +51,32 @@ export async function getServerSideProps(context) {
   };
 
   const data = await client.search(searchRequest).then(response => {
-    const firstResult = response.jsonBody.businesses[0];
-    const prettyJson = JSON.stringify(firstResult, null, 4);
+    const {
+      businesses,
+      total,
+      region,
+    } = response.jsonBody;
 
-    return prettyJson;
+    console.log({
+      total,
+      region,
+      businesses,
+    });
+
+    return {
+      total,
+      region,
+      businesses,
+    };
   }).catch(e => {
     console.log(e);
   });
 
   return {
     props: {
-      term,
-      data,
-      location,
+      term: term,
+      data: data,
+      location: location,
     },
   };
 }
